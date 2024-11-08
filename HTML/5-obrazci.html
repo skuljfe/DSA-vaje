@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>5-obrazci</title>
+<link rel="stylesheet" href="5-obrazci.css">
+<script>
+    function showTime() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        const timeString = `${hours}:${minutes}:${seconds}`;
+        alert(`Current Time: ${timeString}`);
+    }
+</script>
+</head>
+<body>
+
+<h1>Obrazec</h1>
+
+<form action="http://vaje.ltfe.org/echo.php">
+    <label for="fname">Ime:</label><br>
+    <input type="text" id="fname" name="fname" placeholder="Vnesi ime""><br>
+    <label for="pass">Geslo:</label><br>
+    <input type="password" id="pass" name="pass" placeholder="Vnesi geslo"><br><br>
+    <div class="izbira">
+        <input type="radio" id="one" name="one" value="one">
+        <label for="one">1</label><br>
+        <input type="radio" id="two" name="two" value="two">
+        <label for="two">2</label><br>
+        <input type="radio" id="three" name="three" value="three">
+        <label for="three">3</label>
+    </div>
+    <div class="izbira">
+        <input type="checkbox" id="rdeca" name="rdeca" value="rdeca">
+        <label for="rdeca"> Rdeča</label><br>
+        <input type="checkbox" id="zelena" name="zelena" value="zelena">
+        <label for="zelena"> Zelena</label><br>
+        <input type="checkbox" id="nobena" name="nobena" value="nobena">
+        <label for="nobena"> Nobena od teh</label>
+
+    </div>
+    <input type="submit" value="Pošlji">
+  </form>
+
+  <div class="ura">
+    <h1>Prikazi čas</h1>
+    <button onclick="showTime()">Prikazi cas</button>
+  </div>
+</body>
+</html>
+
+

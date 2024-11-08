@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6-multimedija</title>
+<link rel="stylesheet" href="5-obrazci.css">
+</head>
+<body>
+    
+    <button onclick="getLocation()">Prikazi lokacijo</button>
+    <div id="demo">
+        
+    </div>
+    <br>
+    <div>
+        <iframe src="https://vreme.arso.gov.si/widget/?width=610px&loc=Ljubljana" style="border:0; height: 185px; width: 690px;"></iframe>
+    </div>
+    
+
+
+<script>
+    const myElement = document.getElementById("demo");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            myElement.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+    myElement.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+    }
+</script>
+
+</body>
+</html>
+
+
